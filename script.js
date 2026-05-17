@@ -2,11 +2,13 @@
 /** This function allows you to understand if the word is a palindrome */
 function isPalindrome(word) {
 
-    if (word.split(``).reverse().join(``) === word) return true;
-    return false;
+    if (word === ``) return console.log(`You should input a word :(`);
+    if (word.length <= 1) return console.log(`You should enter a longer word:(`);
+    if (word.split(``).reverse().join(``) === word) return console.log(true);
+    return console.log(true);
 };
 
-console.log(isPalindrome(prompt(`dammi una parola`)))
+isPalindrome(prompt(`dammi una parola`))
 
 //r Second exrcise
 /** This function generate a random number to 1 from 5 */
