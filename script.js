@@ -29,4 +29,4 @@ function isEvenOrOdd(sum1, sum2) {
     if (totalSum % 2 !== 0) return console.log(`Odd win!!!`);
 }
 
-// isEvenOrOdd(parseInt(prompt(`dammi un numero da 1 a 5`)), randomNumber())
+isEvenOrOdd(parseInt(prompt(`dammi un numero da 1 a 5`)), randomNumber())
