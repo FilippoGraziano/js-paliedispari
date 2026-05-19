@@ -2,14 +2,18 @@
 /** This function allows you to understand if the word is a palindrome */
 function isPalindrome(word) {
 
-    if (!isNaN(word)) return console.log(`You should input a word not a number :(`);
     if (word === ``) return console.log(`You should input a word :(`);
+    if (!isNaN(word)) return console.log(`You should input a word not a number :(`);
     if (word.length === 1) return console.log(`You should enter a longer word:(`);
-    if (word.split(``).reverse().join(``) === word) return console.log(true);
-    return console.log(false);
+
+    // if (word.split(``).reverse().join(``) === word) return console.log(true);
+    for (i=0; i < word.length; i++) {
+        if (word.at(i) !== word.at(-i -1)) return console.log(false)
+    }
+    return console.log(true);
 };
 
-isPalindrome(prompt(`dammi una parola`))
+// isPalindrome(prompt(`dammi una parola`))
 
 //r Second exrcise
 /** This function generates a random number from 1 to 5 */
@@ -29,4 +33,7 @@ function isEvenOrOdd(sum1, sum2) {
     if (totalSum % 2 !== 0) return console.log(`Odd win!!!`);
 }
 
-isEvenOrOdd(parseInt(prompt(`dammi un numero da 1 a 5`)), randomNumber())
+const userChoice = prompt(`Giochiamo a pari e dispari: scegli tra pari o dispari`)
+
+if (userChoice === `pari` || userChoice === `dispari`) isEvenOrOdd(parseInt(prompt(`dammi un numero da 1 a 5`)), randomNumber());
+else console.log(`Devi scegliere se giocare pari o dispari`);
