@@ -7,13 +7,14 @@ function isPalindrome(word) {
     if (word.length === 1) return console.log(`You should enter a longer word:(`);
 
     // if (word.split(``).reverse().join(``) === word) return console.log(true);
-    for (i=0; i < word.length; i++) {
-        if (word.at(i) !== word.at(-i -1)) return console.log(false)
+    const cleanWord = word.toLowerCase()
+    for (i=0; i < cleanWord.length; i++) {
+        if (cleanWord.at(i) !== cleanWord.at(-i -1)) return console.log(false)
     }
     return console.log(true);
 };
 
-// isPalindrome(prompt(`dammi una parola`))
+isPalindrome(prompt(`dammi una parola`))
 
 //r Second exrcise
 /** This function generates a random number from 1 to 5 */
@@ -27,10 +28,10 @@ function isEvenOrOdd(sum1, sum2) {
     let totalSum = sum1 + sum2;
 
     if (isNaN(sum1)) return console.log(`You should input a number :(`);
-    if (sum1 > 5) return console.log(`You should choose a number from 1 to 5`)
-    if (sum1 < 1) return console.log(`You should choose a number from 1 to 5`)
+    if (sum1 < 1 || sum1 > 5) return console.log(`You should choose a number from 1 to 5`)
+    if (sum2 < 1 || sum2 > 5) return console.log(`You should choose a number from 1 to 5`)
     if (totalSum % 2 === 0) return console.log(`Even win!!!`);
-    if (totalSum % 2 !== 0) return console.log(`Odd win!!!`);
+    return console.log(`Odd win!!!`);
 }
 
 const userChoice = prompt(`Giochiamo a pari e dispari: scegli tra pari o dispari`)
