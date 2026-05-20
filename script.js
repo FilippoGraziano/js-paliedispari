@@ -8,8 +8,9 @@ function isPalindrome(word) {
 
     // if (word.split(``).reverse().join(``) === word) return console.log(true);
     const cleanWord = word.toLowerCase()
-    for (i=0; i < cleanWord.length; i++) {
-        if (cleanWord.at(i) !== cleanWord.at(-i -1)) return console.log(false)
+    for (i=0; i < cleanWord.length / 2; i++) {
+        const oppositeIndex = cleanWord.length -i -1
+        if (cleanWord[i] !== cleanWord[oppositeIndex]) return console.log(false)
     }
     return console.log(true);
 };
